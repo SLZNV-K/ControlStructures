@@ -1,4 +1,3 @@
-package ru.netology
 
 fun main() {
     println(agoToText(36000))
@@ -21,7 +20,7 @@ fun agoToText(second: Int): String {
             }
         }
 
-        second in 39600 .. 50400 -> "Был(а) в сети ${second / 3600} часов назад"
+        second in 39600..50400 -> "Был(а) в сети ${second / 3600} часов назад"
 
         second in 3600..86400 -> {
             when (second / 3600 % 10) {
@@ -42,11 +41,11 @@ fun agoToText(second: Int): String {
 }
 
 //    Задача №2:
-fun calculateCommission(cardType: String = "VK Pay", transferAmount: Int = 0, currentTransfer: Int) {
+fun calculateCommission(cardType: String = "VK Pay", transferAmount: Int = 0, currentTransfer: Int): Number {
     val commission = when (cardType) {
         "MasterCard", "Maestro" -> {
             when {
-                currentTransfer > 300 && transferAmount < 75_000  && transferAmount + currentTransfer < 75_000 -> 0
+                currentTransfer > 300 && transferAmount < 75_000 && transferAmount + currentTransfer < 75_000 -> 0
                 else -> 0.006 * currentTransfer + 20
             }
         }
@@ -55,17 +54,20 @@ fun calculateCommission(cardType: String = "VK Pay", transferAmount: Int = 0, cu
         else -> 0
     }
 
-    when (cardType){
+    when (cardType) {
         "VK Pay" -> if (
             currentTransfer > 15_000 ||
             transferAmount > 40_000 ||
-            transferAmount + currentTransfer > 40_000) println("Перевод невозможен, превышен лимит на счете $cardType")
+            transferAmount + currentTransfer > 40_000
+        ) println("Перевод невозможен, превышен лимит на счете $cardType")
         else println("Комиссия за перевод с помощью $cardType не взимается")
+
         else -> if (
             currentTransfer > 150_000 ||
             transferAmount > 600_000 ||
-            transferAmount + currentTransfer > 600_000) println("Перевод невозможен, превышен лимит по вашей карте $cardType")
+            transferAmount + currentTransfer > 600_000
+        ) println("Перевод невозможен, превышен лимит по вашей карте $cardType")
         else println("Комиссия за перевод $currentTransfer с помощью $cardType составит $commission")
     }
-
+    return commission
 }
