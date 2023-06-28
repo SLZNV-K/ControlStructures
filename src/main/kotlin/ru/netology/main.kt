@@ -1,4 +1,4 @@
-
+package ru.netology
 fun main() {
     println(agoToText(36000))
     calculateCommission(currentTransfer = 10000)
@@ -51,7 +51,7 @@ fun calculateCommission(cardType: String = "VK Pay", transferAmount: Int = 0, cu
         }
 
         "Visa", "Мир" -> if (currentTransfer * 0.0075 > 35) currentTransfer * 0.0075 else 35
-        else -> 0
+        else -> 0.0
     }
 
     when (cardType) {

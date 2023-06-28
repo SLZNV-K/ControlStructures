@@ -12,7 +12,7 @@ class MainKtTest {
 
         val result = calculateCommission(cardType = cardType, transferAmount = amount, currentTransfer = transfer)
 
-        assertEquals(0, result)
+        assertEquals(0.0, result)
     }
 
     @Test
@@ -109,7 +109,7 @@ class MainKtTest {
 
         val result = calculateCommission(cardType = cardType, transferAmount = amount, currentTransfer = transfer)
 
-        assertEquals(0, result)
+        assertEquals(0.0, result)
     }
 
     @Test
@@ -164,7 +164,7 @@ class MainKtTest {
 
         val result = calculateCommission(cardType = cardType, transferAmount = amount, currentTransfer = transfer)
 
-        assertEquals(0, result)
+        assertEquals(0.0, result)
     }
 
     @Test
@@ -219,7 +219,7 @@ class MainKtTest {
 
         val result = calculateCommission(cardType = cardType, transferAmount = amount, currentTransfer = transfer)
 
-        assertEquals(0, result)
+        assertEquals(0.0, result)
     }
 
     @Test
