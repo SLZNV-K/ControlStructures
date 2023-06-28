@@ -45,12 +45,12 @@ fun calculateCommission(cardType: String = "VK Pay", transferAmount: Int = 0, cu
     val commission = when (cardType) {
         "MasterCard", "Maestro" -> {
             when {
-                currentTransfer > 300 && transferAmount < 75_000 && transferAmount + currentTransfer < 75_000 -> 0
+                currentTransfer > 300 && transferAmount < 75_000 && transferAmount + currentTransfer < 75_000 -> 0.0
                 else -> 0.006 * currentTransfer + 20
             }
         }
 
-        "Visa", "Мир" -> if (currentTransfer * 0.0075 > 35) currentTransfer * 0.0075 else 35
+        "Visa", "Мир" -> if (currentTransfer * 0.0075 > 35) currentTransfer * 0.0075 else 35.0
         else -> 0.0
     }
 
